@@ -66,7 +66,7 @@ myQueue.append("death")
 myQueue.append('happy')
 myQueue.popleft()
 print(myQueue)
-'''
+
 
 #list comprehension
 x = [x**2 for x in range(5)]
@@ -85,4 +85,41 @@ print(y)
 #dictionaries: basically same as JS objects, section 5.5
 
 
-#
+#9: scope and classes
+def scope_test():
+    def do_local():
+        spam = "local spam"
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+
+    def do_global():
+        global spam
+        spam = "global spam"
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam) #"test spam"
+    do_nonlocal()
+    print("after nonlocal assignment:", spam) #"non-local spam"
+    do_global()
+    print("After global assignment:", spam) #"non-local spam"
+
+scope_test()
+print("In global scope:", spam) #"global spam"
+'''
+
+class Complex:
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
+
+x = Complex(3.0, -4.5)
+print(x.r, x.i)
+
+class Derived(Complex):
+    def somethingItsOwn(self):
+        # whatever
+#can also do multiple inheritence, via (a, b, c...
+#checks a first, then b, then c
