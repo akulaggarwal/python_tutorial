@@ -108,7 +108,7 @@ def scope_test():
 
 scope_test()
 print("In global scope:", spam) #"global spam"
-'''
+
 
 class Complex:
     def __init__(self, realpart, imagpart):
@@ -123,3 +123,9 @@ class Derived(Complex):
         # whatever
 #can also do multiple inheritence, via (a, b, c...
 #checks a first, then b, then c
+'''
+
+char = 'hello'
+display = 'skdfj'
+for l in char:
+    print(display)
